@@ -1,19 +1,17 @@
 #!/bin/bash
 set -e
 
-BIN_DIR=bin
+DIST_DIR=dist
 
 OS_LIST=("linux" "darwin" "windows")
 ARCH_LIST=("amd64" "arm64")
 
-SRC="main.go"
-
-rm -drf $BIN_DIR
-mkdir -p $BIN_DIR
+rm -rf $DIST_DIR
+mkdir -p $DIST_DIR
 
 for os in "${OS_LIST[@]}"; do
   for arch in "${ARCH_LIST[@]}"; do
-    dir="$BIN_DIR/$os-$arch"
+    dir="$DIST_DIR/$os-$arch"
     mkdir -p "$dir"
     
     ext=""
@@ -24,6 +22,12 @@ for os in "${OS_LIST[@]}"; do
     output="$dir/git-path-from-url$ext"
     
     echo "Building $output..."
-    GOOS=$os GOARCH=$arch go build -o "$output" $SRC
+    GOOS=$os GOARCH=$arch go build -o "$output"
+
+    zip_file="$dir/git-path-from-url.zip"
+    echo "Zipping $zip_file..."
+    zip -j "$zip_file" "$output"
   done
 done
+
+echo "All builds and zip packages completed."
