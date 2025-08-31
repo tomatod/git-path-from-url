@@ -1,6 +1,6 @@
 # git-path-from-url
 A Git plugin that finds the local path corresponding to a URL, e.g.:
-"https://github.com/mike/example/blob/main/src/hoge/bar.go".
+"https://github.com/tomatod/git-path-from-url/blob/main/main.go".
 
 ## Usage
 ### 1. Install
@@ -15,8 +15,9 @@ Otherwise, you can download the binary from [the release page](https://github.co
 You can use it like the next command as a git plugin on a git project directory.
 
 ```sh
-# for example, you are on a directory /usr/michael/example/src/boo/
-git path-from-url http://github.com/mike/example/blob/main/src/hoge/bar.go
+# for example, you are on a directory /home/mike/git-path-from-url/
+$ git path-from-url https://github.com/tomatod/git-path-from-url/blob/main/main.go
+/home/mike/git-path-from-url/main.go
 ```
 
 ## License
