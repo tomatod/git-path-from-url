@@ -10,6 +10,12 @@ go install github.com/tomatod/git-path-from-url
 ```
 
 Otherwise, you can download the binary from [the release page](https://github.com/tomatod/git-path-from-url/releases) and then place it in any directory included by your PATH.
+```sh
+# for example when you are using Linux with AMD64 (X64) and install v0.1.0.
+wget https://github.com/tomatod/git-path-from-url/releases/download/v0.1.0/git-path-from-url-darwin-amd64.zip
+unzip git-path-from-url-darwin-amd64.zip
+sudo mv git-path-from-url /usr/local/bin/
+```
 
 ### 2. Usage
 You can use it like the next command as a git plugin on a git project directory.
