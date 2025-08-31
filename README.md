@@ -6,7 +6,7 @@ A Git plugin that finds the local path corresponding to a URL, e.g.:
 ### 1. Install
 If you are Golang user, you can install it by the next command.
 ```sh
-go get github.com/tomatod/git-path-from-url
+go install github.com/tomatod/git-path-from-url
 ```
 
 Otherwise, you can download the binary from [the release page](https://github.com/tomatod/git-path-from-url/releases) and then place it in any directory included by your PATH.
