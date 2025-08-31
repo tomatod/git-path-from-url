@@ -6,6 +6,8 @@ DIST_DIR=dist
 OS_LIST=("linux" "darwin" "windows")
 ARCH_LIST=("amd64" "arm64")
 
+SRC="main.go"
+
 rm -rf $DIST_DIR
 mkdir -p $DIST_DIR
 
@@ -22,9 +24,9 @@ for os in "${OS_LIST[@]}"; do
     output="$dir/git-path-from-url$ext"
     
     echo "Building $output..."
-    GOOS=$os GOARCH=$arch go build -o "$output"
+    GOOS=$os GOARCH=$arch go build -o "$output" "$SRC"
 
-    zip_file="$dir/git-path-from-url.zip"
+    zip_file="$DIST_DIR/git-path-from-url-$os-$arch.zip"
     echo "Zipping $zip_file..."
     zip -j "$zip_file" "$output"
   done

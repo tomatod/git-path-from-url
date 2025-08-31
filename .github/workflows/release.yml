@@ -31,10 +31,9 @@ jobs:
         with:
           tag: ${{ github.ref_name }}
           artifacts: |
-            dist/linux-amd64/git-path-from-url.zip
-            dist/linux-arm64/git-path-from-url.zip
-            dist/darwin-amd64/git-path-from-url.zip
-            dist/darwin-arm64/git-path-from-url.zip
-            dist/windows-amd64/git-path-from-url.zip
-            dist/windows-arm64/git-path-from-url.zip
-
+            dist/git-path-from-url-linux-amd64.zip
+            dist/git-path-from-url-linux-arm64.zip
+            dist/git-path-from-url-darwin-amd64.zip
+            dist/git-path-from-url-darwin-arm64.zip
+            dist/git-path-from-url-windows-amd64.zip
+            dist/git-path-from-url-windows-arm64.zip
